@@ -9,10 +9,8 @@
     const types     = ['C','D','H','S'];
     const specials  = ['A','J','Q','K'];
     
-    // let playerScore = 0;
-    // let computerScore = 0;
-
-    let playersScore = [];
+    let playerScore = 0;
+    let computerScore = 0;
 
     //HTML References
     const btnAsk          = document.querySelector('#btnAsk');
@@ -31,11 +29,16 @@
     
     stateButtoms(true);
 
+<<<<<<< HEAD
     const startGame = ( numPlayers = 2) => {
        deck = createDeck();
        for (let i = 0; i < numPlayers; i++) {
         const element = array[i];
        }
+=======
+    const startGame = () => {
+       deck = createDeck();
+>>>>>>> 9a4bdb7 (Juego andando sin refactorizar. Fin de seccion 5.)
     }
    
     //This function creates a new deck
@@ -91,7 +94,11 @@
             if (minScore > 21)
                 break;
         } while ((computerScore < minScore) && (playerScore <= 21));
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 9a4bdb7 (Juego andando sin refactorizar. Fin de seccion 5.)
         stateButtoms(true);
         
         setTimeout(() => {
