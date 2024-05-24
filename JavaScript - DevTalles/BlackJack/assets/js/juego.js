@@ -9,8 +9,10 @@
     const types     = ['C','D','H','S'];
     const specials  = ['A','J','Q','K'];
     
-    let playerScore = 0;
-    let computerScore = 0;
+    // let playerScore = 0;
+    // let computerScore = 0;
+
+    let playersScore = [];
 
     //HTML References
     const btnAsk          = document.querySelector('#btnAsk');
@@ -29,8 +31,11 @@
     
     stateButtoms(true);
 
-    const startGame = () => {
+    const startGame = ( numPlayers = 2) => {
        deck = createDeck();
+       for (let i = 0; i < numPlayers; i++) {
+        const element = array[i];
+       }
     }
    
     //This function creates a new deck
@@ -86,7 +91,7 @@
             if (minScore > 21)
                 break;
         } while ((computerScore < minScore) && (playerScore <= 21));
-        
+
         stateButtoms(true);
         
         setTimeout(() => {
