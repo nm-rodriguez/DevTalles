@@ -2,27 +2,22 @@
 
 //PATRON MODULO - Funcion anonima autoinvocada 
 //Soluciona problema de seguridad desde el navegador encapsulando las variables
-(() => {
+const myModule = (() => {
     'use strict'
     
     let deck        = [];
     const types     = ['C','D','H','S'];
     const specials  = ['A','J','Q','K'];
     
-    // let playerScore = 0;
-    // let computerScore = 0;
-
     let playersScore = [];
 
     //HTML References
     const btnAsk          = document.querySelector('#btnAsk');
     const btnStop         = document.querySelector('#btnStop');
     const btnNewGame      = document.querySelector('#btnNewGame');
-    const sPlayerScore    = document.querySelector('#playerScore');
-    const sComputerScore  = document.querySelector('#computerScore');
-    const divPlayerCard   = document.querySelector('#jugador-cartas');
-    const divComputerCard = document.querySelector('#computadora-cartas');
 
+    const sPlayerScore    = document.querySelectorAll('small');
+    const divPlayerCards  = document.querySelectorAll('.divCards');
     
     const stateButtoms = ( state ) => {
         btnAsk.disabled = state;
@@ -33,9 +28,16 @@
 
     const startGame = ( numPlayers = 2) => {
        deck = createDeck();
+       playersScore = [];
        for (let i = 0; i < numPlayers; i++) {
-        const element = array[i];
+         playersScore.push(0);
        }
+
+       for (let i = 0; i < playersScore.length; i++) {
+        sPlayerScore[i].innerText = 0;
+        divPlayerCards[i].innerText = '';
+        }
+    stateButtoms(false);
     }
    
     //This function creates a new deck
@@ -73,27 +75,24 @@
         return (isNaN(value)) ? (( value === 'A') ? 11 : 10) : value * 1;
     }
 
-    const accumulatePlayerScore = () => {
-
+    //Turno: 0 first player, and n-1 is the computer
+    const accumulatePlayerScore = ( card, turno ) => {
+        playersScore[turno] = playersScore[turno] + cardValue(card);
+        sPlayerScore[turno].innerText = playersScore[turno];
+       
+        return playersScore[turno];
     }
-    //Computer's turn
-    const computerSet = ( minScore) => {
-        do {
-            const card = askCard();
-            
-            computerScore = computerScore + cardValue(card);
-            sComputerScore.innerText = computerScore;
 
-            const imgCard = document.createElement('img');
-            imgCard.src = `assets/cartas/${card}.png`;
-            imgCard.classList.add('carta');
-            divComputerCard.append(imgCard);
-            if (minScore > 21)
-                break;
-        } while ((computerScore < minScore) && (playerScore <= 21));
+    const createCard = (card,turno) => {
+        const imgCard = document.createElement('img');
+        imgCard.src = `assets/cartas/${card}.png`;
+        imgCard.classList.add('carta');
+        divPlayerCards[turno].append(imgCard);
+    }
 
-        stateButtoms(true);
-        
+    const winner = () => {
+        const [minScore, computerScore] = playersScore;
+
         setTimeout(() => {
             if (computerScore === minScore) {
                 alert("Nobody wins");
@@ -105,55 +104,55 @@
                 alert("Computer wins");
             }
         }, 20);
+    }
+    //Computer's turn
+    const computerSet = ( minScore) => {
+        let computerScore = 0;
+        
+        do {
+            const card = askCard();
+            computerScore = accumulatePlayerScore( card , playersScore.length - 1);
+            createCard(card , playersScore.length - 1);
+           if(minScore > 21) break;     
+        } while ((computerScore < minScore) && (computerScore <= 21));
 
-    
+        winner();
+        stateButtoms(true);
+        
     };
 
     //Events
+
+    //BTN ASK A CARD
     btnAsk.addEventListener('click',() => {
         const card = askCard();
-        
-        playerScore = playerScore + cardValue(card);
-        sPlayerScore.innerText = playerScore;
+        const playerScore = accumulatePlayerScore( card , 0);
 
-        const imgCard = document.createElement('img');
-        imgCard.src = `assets/cartas/${card}.png`;
-        imgCard.classList.add('carta');
-        divPlayerCard.append(imgCard);
+        createCard(card,0);
 
         if (playerScore > 21) {
             console.warn('you lost, I am sorry');
-            btnAsk.disabled = true;
+            stateButtoms(true);
             computerSet(playerScore);
         }else if (playerScore === 21){
             console.info("you get 21, congrats! Computer's turn");
-            btnAsk.disabled = true;
+            stateButtoms(true);
             computerSet(playerScore);
         }
     });
 
+    //BTN STOP GAME
     btnStop.addEventListener('click',() => {
-        btnAsk.disabled = true;
-        btnStop.disabled = true;
-        
-        computerSet(playerScore);
+        stateButtoms(true);
+        computerSet(playersScore[0]);
     });
-
+    
+    //BTN NEW GAME
     btnNewGame.addEventListener('click',() => {
         startGame();
-        // deck = [];
-        // deck = createDeck();
-        
-        playerScore              = 0;
-        computerScore            = 0;
-        sPlayerScore.innerText   = playerScore;
-        sComputerScore.innerText = computerScore;
-
-        divPlayerCard.innerHTML = '';
-        divComputerCard.innerHTML = '';
-
-        btnAsk.disabled = false;
-        btnStop.disabled = false;
     });
 
+    return {
+        newGame: startGame
+    };
 })();
