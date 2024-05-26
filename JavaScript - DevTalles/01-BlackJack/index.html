@@ -24,24 +24,28 @@
 
     <div class="row container">
         <div class="col">
-            <h1>Jugador 1 - <small id="playerScore">0</small></h1>
-            <div id="jugador-cartas">
+            <h1>Jugador 1 - <small>0</small></h1>
+            <div id="jugador-cartas" class="divCards">
                 <!-- <img src="assets/cartas/10H.png" alt="" class="carta"> -->
             </div>
         </div>
     </div>
     <div class="row container mt-2">
         <div class="col">
-            <h1>Computadora - <small id="computerScore">0</small></h1>
-            <div id="computadora-cartas">
+            <h1>Computadora - <small>0</small></h1>
+            <div id="computadora-cartas" class="divCards">
                 <!-- <img src="assets/cartas/10H.png" alt="" class="carta"> -->
             </div>
         </div>
     </div>
        
 
-
     <script src="assets/js/underscore-min.js"></script>
     <script src="assets/js/juego.js"></script>
+    <!-- <script src="assets/js/juego-min.js"></script> -->
+
+    <script>
+        myModule.newGame();
+    </script>
 </body>
 </html>
