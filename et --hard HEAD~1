@@ -1,0 +1,104 @@
+[33mcommit 979372ada2c9905e34b56620fa0aaae7b0f2a209[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 0019d95 4d7e370
+Author: Nicolás Mariano Rodríguez <84926262+nm-rodriguez@users.noreply.github.com>
+Date:   Wed Jun 5 09:27:19 2024 -0300
+
+    Merge pull request #3 from nm-rodriguez/seccion9
+    
+    Seccion9
+
+[33mcommit 4d7e3700260cf277e25c232680e8ec5bffdac137[m[33m ([m[1;31morigin/seccion9[m[33m, [m[1;32mseccion9[m[33m)[m
+Author: Nicolas <nicko_@live.com.ar>
+Date:   Wed Jun 5 09:18:38 2024 -0300
+
+    Modificacion nombres
+
+[33mcommit c50fc568f044f0e529a50b3754b5c9ba4ba33f96[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Tue Jun 4 11:52:57 2024 -0300
+
+    Borrado de carpetas irrelevantes a la seccion
+
+[33mcommit 0019d95bc3bb45753ae0fc033a2ba70ddd74ca35[m
+Merge: ce4500e c5a7294
+Author: Nicolás Mariano Rodríguez <84926262+nm-rodriguez@users.noreply.github.com>
+Date:   Tue Jun 4 11:49:38 2024 -0300
+
+    Merge pull request #2 from nm-rodriguez/seccion9
+    
+    Seccion9
+
+[33mcommit c5a7294f1bd586f88949327a7021b345fb89ced6[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Tue Jun 4 11:46:58 2024 -0300
+
+    Seccion 9 first commit, copia de seccion 8
+
+[33mcommit f9c5691dcaf67d756a9b43473100bb2fc96fd84b[m[33m ([m[1;33mtag: v1.0.0[m[33m)[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Mon Jun 3 12:26:51 2024 -0300
+
+    Curso de node first commit Seccion 8
+
+[33mcommit ce4500e1da73657b2c57f9d5b4226d8c1b7a5cda[m
+Merge: 9a4bdb7 915dda1
+Author: Nicolás Mariano Rodríguez <84926262+nm-rodriguez@users.noreply.github.com>
+Date:   Sun May 26 20:51:52 2024 -0300
+
+    Merge pull request #1 from nm-rodriguez/vFuncionalRefactorizada
+    
+    V funcional refactorizada
+
+[33mcommit 915dda1e7b2728688e43902264bd9ffb41ff9235[m[33m ([m[1;31morigin/vFuncionalRefactorizada[m[33m)[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Sun May 26 20:50:07 2024 -0300
+
+    Commit hasta seccion 8 completa. BlackJack vite completo andando
+
+[33mcommit 55238e4343181ce5e8077ed95683475e738395b7[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Fri May 24 15:11:55 2024 -0300
+
+    Fin de seccion 6. Codigo optimizado. Agrego archivo min
+
+[33mcommit a8f21be9e33088f4a7ba4d47f5d16d2c13bec134[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Fri May 24 15:05:32 2024 -0300
+
+    Fin de seccion 6. Codigo optimizado
+
+[33mcommit 97074359642e3b544fb96d441532959185b7dce0[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Fri May 24 11:15:08 2024 -0300
+
+    first commit
+
+[33mcommit c2c260671721a49b79f162ebcd22f0328dad9860[m[33m ([m[1;31morigin/vFuncionalOriginal[m[33m)[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Fri May 24 11:30:15 2024 -0300
+
+    Version original sin refactorizar. Como salio de modulo 5
+
+[33mcommit 1a60d01636ff3bb09715b289d7014c8cbc82e2a6[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Fri May 24 09:58:22 2024 -0300
+
+    Juego andando sin refactorizar. Fin de seccion 5.
+
+[33mcommit 047aba9cac60c349d3e48374e6264cf65fc10d1f[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Fri May 24 11:15:08 2024 -0300
+
+    first commit
+
+[33mcommit 9a4bdb73cee38ca7aae6f4209c139963f9719af2[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Fri May 24 09:58:22 2024 -0300
+
+    Juego andando sin refactorizar. Fin de seccion 5.
+
+[33mcommit 39f8cd6d743ce5b7fdb38906dd2adbfcfcbe4152[m
+Author: Rodriguez Nicolas Mariano <nmrodriguez@sancorseguros.com>
+Date:   Thu May 23 09:03:18 2024 -0300
+
+    first commit
